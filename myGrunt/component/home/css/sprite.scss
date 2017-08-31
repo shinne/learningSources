@@ -1,0 +1,156 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$close-name: 'close';
+$close-x: 0px;
+$close-y: 15px;
+$close-offset-x: 0px;
+$close-offset-y: -15px;
+$close-width: 11px;
+$close-height: 11px;
+$close-total-width: 34px;
+$close-total-height: 26px;
+$close-image: '../img/sprite.png';
+$close: (0px, 15px, 0px, -15px, 11px, 11px, 34px, 26px, '../img/sprite.png', 'close', );
+$down-icon-name: 'down-icon';
+$down-icon-x: 11px;
+$down-icon-y: 15px;
+$down-icon-offset-x: -11px;
+$down-icon-offset-y: -15px;
+$down-icon-width: 8px;
+$down-icon-height: 10px;
+$down-icon-total-width: 34px;
+$down-icon-total-height: 26px;
+$down-icon-image: '../img/sprite.png';
+$down-icon: (11px, 15px, -11px, -15px, 8px, 10px, 34px, 26px, '../img/sprite.png', 'down-icon', );
+$from-to-name: 'from-to';
+$from-to-x: 13px;
+$from-to-y: 0px;
+$from-to-offset-x: -13px;
+$from-to-offset-y: 0px;
+$from-to-width: 13px;
+$from-to-height: 13px;
+$from-to-total-width: 34px;
+$from-to-total-height: 26px;
+$from-to-image: '../img/sprite.png';
+$from-to: (13px, 0px, -13px, 0px, 13px, 13px, 34px, 26px, '../img/sprite.png', 'from-to', );
+$right-icon-name: 'right-icon';
+$right-icon-x: 0px;
+$right-icon-y: 0px;
+$right-icon-offset-x: 0px;
+$right-icon-offset-y: 0px;
+$right-icon-width: 13px;
+$right-icon-height: 15px;
+$right-icon-total-width: 34px;
+$right-icon-total-height: 26px;
+$right-icon-image: '../img/sprite.png';
+$right-icon: (0px, 0px, 0px, 0px, 13px, 15px, 34px, 26px, '../img/sprite.png', 'right-icon', );
+$up-icon-name: 'up-icon';
+$up-icon-x: 26px;
+$up-icon-y: 0px;
+$up-icon-offset-x: -26px;
+$up-icon-offset-y: 0px;
+$up-icon-width: 8px;
+$up-icon-height: 10px;
+$up-icon-total-width: 34px;
+$up-icon-total-height: 26px;
+$up-icon-image: '../img/sprite.png';
+$up-icon: (26px, 0px, -26px, 0px, 8px, 10px, 34px, 26px, '../img/sprite.png', 'up-icon', );
+$upup-name: 'upup';
+$upup-x: 26px;
+$upup-y: 10px;
+$upup-offset-x: -26px;
+$upup-offset-y: -10px;
+$upup-width: 8px;
+$upup-height: 8px;
+$upup-total-width: 34px;
+$upup-total-height: 26px;
+$upup-image: '../img/sprite.png';
+$upup: (26px, 10px, -26px, -10px, 8px, 8px, 34px, 26px, '../img/sprite.png', 'upup', );
+$-p-c-0721-name: '京东会员页-PC-提升京享值-弹窗0721';
+$-p-c-0721-x: 26px;
+$-p-c-0721-y: 18px;
+$-p-c-0721-offset-x: -26px;
+$-p-c-0721-offset-y: -18px;
+$-p-c-0721-width: 5px;
+$-p-c-0721-height: 5px;
+$-p-c-0721-total-width: 34px;
+$-p-c-0721-total-height: 26px;
+$-p-c-0721-image: '../img/sprite.png';
+$-p-c-0721: (26px, 18px, -26px, -18px, 5px, 5px, 34px, 26px, '../img/sprite.png', '京东会员页-PC-提升京享值-弹窗0721', );
+$spritesheet-width: 34px;
+$spritesheet-height: 26px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($close, $down-icon, $from-to, $right-icon, $up-icon, $upup, $-p-c-0721, );
+$spritesheet: (34px, 26px, '../img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

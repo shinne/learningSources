@@ -1,0 +1,12 @@
+@import " sprite.scss";
+.body-wrapper{
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid red;
+  .title-wrapper {
+    height: 50px;
+    //使用这种方法就可以直接使用雪碧图
+    @include sprite($right-icon);
+  }
+}
