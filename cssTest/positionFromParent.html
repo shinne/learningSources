@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.parent{
+			position: relative;
+			height: 200px;
+			width: 300px;
+			padding: 20px;
+			border: 1px solid red;
+			margin-left: 40px;
+		}
+
+		.child{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width:250px;
+			height: 50px;
+			background: blue;
+			color:white;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="child">absolute定位是从父级div的padding开始的</div>
+
+	</div>
+</body>
+</html>
