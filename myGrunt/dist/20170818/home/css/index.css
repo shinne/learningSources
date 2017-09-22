@@ -2,7 +2,8 @@
   height: 500px;
   width: 800px;
   margin: 0 auto;
-  border: 1px solid red; }
+  border: 1px solid red;
+  display: flex; }
   .body-wrapper .title-wrapper {
     height: 50px;
     background-image: url(../img/sprite.png);

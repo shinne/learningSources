@@ -9,6 +9,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-spritesmith");
     grunt.loadNpmTasks("grunt-contrib-imagemin");
+    grunt.loadNpmTasks('grunt-autoprefixer');
     //雪碧图的配置
     var module =
         {
@@ -78,6 +79,20 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
+        // autoprefixer插件配置：写样式的时候不需要考虑兼容性问题，autoprefixer自动加前缀
+        autoprefixer: {
+            options: {
+                browserList: ['last 2 versions', 'ie8', 'ie9']
+            },
+            dev: {
+                src: 'component/**/*.css'
+            },
+            prod: {
+                src: 'dist/**/*.css'
+            }
+        },
+
         // jshint插件配置，用于检查js语法
         jshint: {
             options: {
@@ -117,7 +132,7 @@ module.exports = function (grunt) {
         watch:{
             sass: {
                 files: 'component/**/*.scss',
-                tasks: ['sass']
+                tasks: ['sass','autoprefixer:dev']
             },
             scripts:{
                 files: 'component/**/*.js',
@@ -151,6 +166,6 @@ module.exports = function (grunt) {
         },
     });
     //告诉grunt当我们在终端中输入grunt需要做些什么（注意先后顺序）
-    grunt.registerTask("default",['sprite','sass:dev','connect','watch']);
-    grunt.registerTask("build",['clean:prod','jshint','uglify','sprite','sass:prod','imagemin']);
+    grunt.registerTask("default",['sprite','autoprefixer:dev','sass:dev','connect','watch']);
+    grunt.registerTask("build",['clean:prod','jshint','autoprefixer:prod','uglify','sprite','sass:prod','imagemin']);
 };

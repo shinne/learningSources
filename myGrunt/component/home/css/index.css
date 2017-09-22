@@ -2,12 +2,13 @@
   height: 500px;
   width: 800px;
   margin: 0 auto;
-  border: 1px solid red; }
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
   .body-wrapper .title-wrapper {
     height: 50px;
     background-image: url(../img/sprite.png);
     background-position: 0px 0px;
     width: 13px;
     height: 15px; }
-
-/*# sourceMappingURL=index.css.map */

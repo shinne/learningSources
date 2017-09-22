@@ -63,8 +63,13 @@
 
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor('editor');
-
+    var ueditor = UE.getEditor('editor');
+    var ueditorContent ='<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <title>无标题文档</title> <style type="text/css"> body,td,th { font-size: 14px; } </style>
+        </head><body><table border="0" cellpadding="0" cellspacing="0" align="center" height="895" width="731">
+        <tbody> <tr> <td align="center" height="0" width="1"><br /></td> <td width="730"> <table border="0" cellpadding="0" cellspacing="0" width="0">  <tbody>  <tr> <td background="//img30.360buyimg.com/jgsq-productsoa/jfs/t2023/117/952909233/288928/21f3f0a6/56371981N7720ecdd.jpg" height="393" width="745"><br /></td> </tr> <tr align="center"> <td style="color:#4e3838;font-family:微软雅黑;font-size:20px;padding-top:-150px;" align="center" background="//img30.360buyimg.com/jgsq-productsoa/jfs/t1558/292/425094537/19224/f4ec721d/55827e1cNbb4796ef.jpg" height="68"><p><strong>传统制法渐行渐远 购买面包机有多少理由</strong></p></td></tr><tr><td style="color:#4e3838;font-family:微软雅黑;font-size:14px;text-indent:2em ;padding-left:60px;padding-right:65px;padding-top:-60;" background="//img30.360buyimg.com/jgsq-productsoa/jfs/t916/261/1236929162/143435/3144ea58/55827e20Nac1aec62.jpg" height="289"><p><br /></p><p>面包机是家中制作</tr><tr> <td style="color:#513e59;font-family:微软雅黑;font-size:14px;" align="center" background="//img30.360buyimg.com/jgsq-productsoa/jfs/t1303/40/522512036/26553/14ff0758/55811c91N7c010b49.jpg" height="62"><br /></td></tr> </tbody> </table></td>  </tr>  </tbody>  </table> </body></html>';
+    ueditor.addListener( 'ready', function() {
+        ueditor.setContent(_self.ueditorContent);
+    } );
 
     function isFocus(e){
         alert(UE.getEditor('editor').isFocus());

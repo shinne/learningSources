@@ -4,6 +4,9 @@
   width: 800px;
   margin: 0 auto;
   border: 1px solid red;
+  //这里将兼容性的问题交给autoprefixer,
+  //会看到index.css里面自动处理了兼容性的样式表
+  display: flex;
   .title-wrapper {
     height: 50px;
     //使用这种方法就可以直接使用雪碧图
