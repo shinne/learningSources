@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 800px;
+  height: 200px; }
+  .container .slider-container {
+    position: relative;
+    margin-top: 20px;
+    height: 200px; }
+    .container .slider-container .prev-click {
+      position: absolute;
+      left: 0;
+      top: 0;
+      vertical-align: middle;
+      width: 50px;
+      height: 200px;
+      background: green; }
+      .container .slider-container .prev-click.disable {
+        background: grey; }
+    .container .slider-container .next-click {
+      position: absolute;
+      right: 0;
+      top: 0;
+      vertical-align: middle;
+      width: 50px;
+      height: 200px;
+      background: green; }
+      .container .slider-container .next-click.disable {
+        background: grey; }
+    .container .slider-container .slider-list-container {
+      position: relative;
+      margin: 0 50px auto 50px;
+      overflow: hidden;
+      height: 200px;
+      font-size: 0; }
+      .container .slider-container .slider-list-container .slider-list {
+        position: relative;
+        left: 0;
+        width: 1500px; }
+        .container .slider-container .slider-list-container .slider-list .slider-item {
+          display: inline-block;
+          width: 140px;
+          height: 200px;
+          font-size: 14px;
+          border: 1px solid red;
+          box-sizing: border-box; }
+
+/*# sourceMappingURL=main.css.map */

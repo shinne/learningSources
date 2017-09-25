@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./main.css">
+    <script src="http://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="simple-slider.js"></script>
+    <title>simple-slider</title>
+</head>
+<body>
+    <div class="container">
+        <div class="slider-container container1">
+            <div class="prev-click"> < </div>
+            <div class="next-click"> > </div>
+            <div class="slider-list-container">
+                <div class="slider-list">
+                    <div class="slider-item">1</div>
+                    <div class="slider-item">2</div>
+                    <div class="slider-item">3</div>
+                    <div class="slider-item">4</div>
+                    <div class="slider-item">5</div>
+                    <div class="slider-item">6</div>
+                    <div class="slider-item">7</div>
+                    <div class="slider-item">8</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container container2">
+            <div class="prev-click"> < </div>
+            <div class="next-click"> > </div>
+            <div class="slider-list-container">
+                <div class="slider-list">
+                    <div class="slider-item">1</div>
+                    <div class="slider-item">2</div>
+                    <div class="slider-item">3</div>
+                    <div class="slider-item">4</div>
+                    <div class="slider-item">5</div>
+                    <div class="slider-item">6</div>
+                    <div class="slider-item">7</div>
+                    <div class="slider-item">8</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container container3">
+            <div class="prev-click"> < </div>
+            <div class="next-click"> > </div>
+            <div class="slider-list-container">
+                <div class="slider-list">
+                    <div class="slider-item">1</div>
+                    <div class="slider-item">2</div>
+                    <div class="slider-item">3</div>
+                    <div class="slider-item">4</div>
+                    <div class="slider-item">5</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container container4">
+            <div class="prev-click"> < </div>
+            <div class="next-click"> > </div>
+            <div class="slider-list-container">
+                <div class="slider-list">
+                    <div class="slider-item">1</div>
+                    <div class="slider-item">2</div>
+                    <div class="slider-item">3</div>
+                    <div class="slider-item">4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        new simpleSlider({
+            sliderContainer:'.container1',
+            currentIndex:2,
+            speed:1000
+        });
+        new simpleSlider({
+            sliderContainer:'.container2',
+            currentIndex:1
+        });
+        new simpleSlider({
+            sliderContainer:'.container3',
+            currentIndex:3
+        });
+        new simpleSlider({
+            sliderContainer:'.container4',
+            currentIndex:30
+        });
+    </script>
+</body>
+</html>
