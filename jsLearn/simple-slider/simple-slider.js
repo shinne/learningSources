@@ -89,6 +89,9 @@ simpleSlider.prototype = {
             _self.slideTo(_self.currentIndex+1,"next");
         });
     },
+    // 通过index控制sliderList滑动到对应的地方,
+    // 并通过unclick控制其滑动时不允许点击，
+    // 判断按钮是否处于disable状态
     slideTo:function (index,direct) {
         var _self = this;
         if((index < 0) || (index > _self.maxIndex)){
