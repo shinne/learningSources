@@ -53,12 +53,12 @@ simpleSlider.prototype = {
         _self.initParam();
         _self.currentIndex = _self.config.currentIndex>_self.maxIndex?_self.maxIndex:_self.config.currentIndex;
 
+        //当list的实际宽度小于承载容器的宽度时，将左右按钮都置灰
        if(parseInt(_self.sliderList.css("width")) <= parseInt(_self.sliderListContainer.css("width"))){
-            console.log(_self.sliderList.css("width"));
-            console.log(_self.sliderListContainer.css("width"));
             _self.prevClick.addClass(_self.config.disable);
             _self.nextClick.addClass(_self.config.disable);
        }
+       //滑动到用户指定的按钮那儿
         if(_self.currentIndex>0){
             _self.slideTo(_self.currentIndex,"next");
         }
@@ -77,7 +77,7 @@ simpleSlider.prototype = {
                 return;
             }
             _self.slideTo(_self.currentIndex-1,"prev");
-        })
+        });
     },
     nextClickFn:function () {
         var _self = this;
@@ -87,7 +87,7 @@ simpleSlider.prototype = {
                 return;
             }
             _self.slideTo(_self.currentIndex+1,"next");
-        })
+        });
     },
     slideTo:function (index,direct) {
         var _self = this;
@@ -107,7 +107,7 @@ simpleSlider.prototype = {
                 if(_self.currentIndex == 0 ){
                     _self.prevClick.addClass(_self.config.disable);
                 }
-            })
+            });
         }
         else{
             _self.nextClick.addClass(_self.config.unClick);
@@ -122,7 +122,7 @@ simpleSlider.prototype = {
                     if(_self.currentIndex >= _self.maxIndex ){
                         _self.nextClick.addClass(_self.config.disable);
                     }
-                })
+                });
         }
     }
 };
