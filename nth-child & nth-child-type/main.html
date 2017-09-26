@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .post>p:nth-child(2){color:red;}
+        .post-type>p:nth-of-type(2){color:red;}
+    </style>
+</head>
+<body>
+<h1>p:nth-child(2) 这个p标签的父节点的第二个子元素节点是p的话生效
+    p:nth-of-type(2) 这个p标签的父节点存在两个或两个以上的子元素节点p的话 第二个p标签生效</h1>
+
+<hr>
+<h3>nth-child</h3>
+<div class="post">
+    <p>我是文章的第一个段落</p>
+    <p>我是文章的第二个段落</p><!** ==我要变成第二个段落== **>
+</div>
+
+<h3>nth-of-type</h3>
+<div class="post-type">
+    <p>我是文章的第一个段落</p>
+    <p>我是文章的第二个段落</p><!** ==我要变成第二个段落== **>
+</div>
+
+<hr>
+<h3>当增加了一个span在第一列的时候</h3>
+<h3>nth-child</h3>
+<div class="post">
+    <span>新增了一行span</span>
+    <p>我是文章的第一个段落</p>
+    <p>我是文章的第二个段落</p><!** ==我要变成第二个段落== **>
+</div>
+
+<h3>nth-of-type</h3>
+<div class="post-type">
+    <span>新增了一行span</span>
+    <p>我是文章的第一个段落</p>
+    <p>我是文章的第二个段落</p><!** ==我要变成第二个段落== **>
+</div>
+
+<hr>
+<h3>当增加了两个span在第一列的时候</h3>
+<h3>nth-child</h3>
+<div class="post">
+    <span>新增了一行span</span>
+    <div>新增了二行span</div>
+    <p>我是文章的第一个段落</p>
+    <p>我是文章的第二个段落</p><!** ==我要变成第二个段落== **>
+</div>
+
+<h3>nth-of-type</h3>
+<div class="post-type">
+    <span>新增了一行span</span>
+    <div>新增了二行span</div>
+    <p>我是文章的第一个段落</p>
+    <p>我是文章的第二个段落</p><!** ==我要变成第二个段落== **>
+</div>
+
+
+</body>
+</html>

@@ -3,3 +3,4 @@
 **/*.zip
 **/*.rar
 **/*/.sass-cache
+.idea/*
