@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./timeSpanToString.js"></script>
+</head>
+<body>
+    如何将时间转换成正确的格式
+
+    <button id="timeFormate">获取当前时间并转换</button>
+<script>
+    var btn = document.getElementById("timeFormate");
+    btn.onclick = function () {
+       var nowTime = new Date();
+       var formateTime = timeSpanToString(nowTime);
+       alert("转换前时间为：" + nowTime + "转换后时间为：" + formateTime);
+    }
+</script>
+</body>
+</html>
