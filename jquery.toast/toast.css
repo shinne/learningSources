@@ -1,0 +1,39 @@
+#toast {
+  position: fixed;
+  top: 50%;
+  left: 42%;
+/*   background: #f7f7f7; */
+  padding: 18px;
+  z-index: 2000;
+  border: 1px solid #f3f3f3;
+  border-radius:5px;
+
+}
+.info{
+  border-color: #f3f3f3;
+  background-color: #f3f3f3;
+  color: #fff;
+}
+
+.success {
+  border-color: green;
+  background-color: green;
+  color: #fff;
+}
+.warn {
+  border-color: orange;
+  background-color: orange;
+  color: #fff;
+}
+.danger {
+  border-color: red;
+  background-color: red;
+  color: #fff;
+}
+
+.dismiss {
+  position: absolute;
+  right: .2rem;
+  top: .2rem;
+  cursor: pointer;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-2.2.4.js"></script>
+	<script src="./pager.js"></script>
+	<style>
+	#pager{
+		height: 50px;
+		border: 1px solid red;
+	}
+	li{
+		display: inline-block;
+		width:50px;
+		height: 20px;
+		line-height: 20px;
+		border: 1px solid red
+	}
+	span{
+		width: 50px;
+	}
+	</style>
+</head>
+<body>
+	<div class="pager"></div>
+	<script>
+	var a = $(".pager").pager({
+		pageSize: 12,
+        itemCount:100,
+        onPageChanged: function(pageIndex){
+            self.pageIndex = pageIndex
+            self.getData()
+        },
+        onPageSizeChanged: function(pageSize) {
+            self.pageIndex = 0
+            self.pageSize = pageSize
+            self.getData()
+        }
+	});
+
+    function updatePage() {
+	    this.page.updateOptions({
+	        pageIndex: this.pageIndex,
+	        pageSize: this.pageSize,
+	        itemCount: this.itemCount
+	    })
+	}
+
+	function getData(){
+		alert("一般这里需要一个ajax异步获取翻页的数据，同时调用updatePage更新分页插件");
+		updatePage();
+	}
+
+
+	</script>
+</body>
+</html>
