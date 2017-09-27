@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent{
+            position: relative;
+            border: 1px solid red;
+        }
+        .child{
+            position: absolute;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        absolute 设置后如何撑开父元素：答案是！！！<h1>没有办法撑开！！！</h1>
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -4,3 +4,4 @@
 **/*.rar
 **/*/.sass-cache
 .idea/*
+**/*.pdf
