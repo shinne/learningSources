@@ -7,19 +7,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .triangle{
+        .triangle1{
+            width: 20px;
+            height: 20px;
+            border-top: 50px solid red;
+            border-bottom: 50px solid black;
+            border-left: 50px solid green;
+            border-right: 50px solid yellow;
+        }
+
+        .triangle2{
             width: 0;
             height: 0;
-            border-top: 50px solid red;
-            border-top: 50px solid red;
-            border-top: 50px solid red;
-            border-top: 50px solid red;
+            /*border-top: 50px solid red;*/
+            border-bottom: 50px solid black;
+            border-left: 50px solid green;
+            border-right: 50px solid yellow;
+        }
+
+        .triangle3{
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid yellowgreen;
+            border-left: 50px solid transparent;
+            border-right: 50px solid yellowgreen;
+        }
+
+        .triangle4{
+            width: 0;
+            height: 0;
+            /*border-top: 50px solid transparent;*/
+            border-bottom: 50px solid yellow;
+            border-left: 50px solid transparent;
+            border-right: 50px solid yellow;
+        }
+
+        .triangle5{
+            width: 0;
+            height: 0;
+            border-top: 50px solid darkgreen;
+           /* border-bottom: 50px solid yellow;*/
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
         }
 
 
     </style>
 </head>
 <body>
-    <div class="triangle"></div>
+    <h1>
+        <div>三角形原理</div>
+        <a href="">http://blog.csdn.net/xiebaochun/article/details/37581507</a>
+        <a href="">http://blog.csdn.net/pengjunlee/article/details/53002553</a></h1>
+    <h3>1有宽高的情况下，能够清晰看到border是怎样的，分别设置了border-left,right,top,bottom</h3>
+    <div class="triangle1"></div>
+
+    <h3>2无宽高的情况下，无border-top</h3>
+    <div class="triangle2"></div>
+
+    <h3>3无宽高的情况下，设置border-top,left:transparent;bottom,right:50px;</h3>
+    <div class="triangle3"></div>
+
+    <h3>4无宽高的情况下，变成梯形；不设置border-top，并且left:transparent;bottom,right:50px;</h3>
+    <div class="triangle4"></div>
+
+    <h3>5倒三角；不设置border-bottom，并且left,right:transparent;top:50px;</h3>
+    <div class="triangle5"></div>
 </body>
 </html>
