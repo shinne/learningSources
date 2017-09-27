@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" rel="shortcut icon" href="./icon-bg.png">
+    <title>Document</title>
+    <style>
+        div{
+            height: 15px;
+        }
+        .real-icon{
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: top;
+            width: 16px;
+            height: 15px;
+            background: url(./icon-bg.png);
+            background-size: cover;
+        }
+        span{
+            vertical-align: top;
+            font: 15px/15px normal;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="icon-wrap">
+        <i class="real-icon"></i>
+        <span>需要给< i >标签设置display:inline-block,并且会有元素下榻的现象，解决需设定vertical-align:top;</span>
+    </div>
+</body>
+</html>
