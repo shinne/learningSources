@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .overflow{
+            width: 500px;
+            height: 30px;
+            font: 20px/30px normal;
+            border: 1px solid red;
+            /*文本截断*/
+            white-space: nowrap; /*强制文本在一行显示完，除非碰上br*/
+            overflow: hidden;/*超出部分不显示，*/
+            text-overflow: ellipsis;/*文本超出部分用...代替*/
+            /*end 文本截断*/
+        }
+    </style>
+</head>
+<body>
+    <h3>
+        文本截断，用省略号代替
+    </h3>
+    <div class="overflow">经测试，至少兼容到ie8；这里使用css样式对div进行文本截断</div>
+
+</body>
+</html>
