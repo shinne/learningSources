@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            text-align: center;
+
+        }
+        .child{
+            display: inline-block;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            border: 1px solid green;
+        }
+        .child1{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 100px;
+            width: 100px;
+            border: 1px solid yellowgreen;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <span class="child">我是一个内联元素，父级设置了text-align:center，于是我就水平居中了</span>
+    </div>
+
+    <div class="parent">
+        <div class="child1">我是absolute，left,right,top,bottom:0,margin:auto;</div>
+    </div>
+</body>
+</html>
