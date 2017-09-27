@@ -6,8 +6,52 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .float-wrap{
+            float: left;
+            width: 50px;
+            height: 100px;
+            background:url(./icon-bg.png) ;
+        }
+        .next-div{
+            width: 1000px;
+            height: 90px;
+            background: green;
+            color: #fff;
+        }
+        .float-wrapper{
+            border: 1px solid red;
+        }
+        .clearfix{
+            *zoom: 1;  /*兼容ie7及以下*/
+        }
+        .clearfix:after{
+            clear: both;
+            content: '';
+            display: block;
+            height: 0;
+        }
+
+
+    </style>
 </head>
 <body>
-    清除浮动
+    <h3>清除浮动</h3>
+    <hr>
+
+    <h3>div浮动，如果它的下一个元素是内联元素。则div会占据位置，内联元素会围绕在它的周围</h3>
+    <div class="float-wrap"></div>
+    <span>我是一个内联元素，会围绕在浮动元素的周围。我是一个内联元素，会围绕在浮动元素的周围。我是一个内联元素，会围绕在浮动元素的周围。我是一个内联元素，会围绕在浮动元素的周围。我是一个内联元素，会围绕在浮动元素的周围。我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围.我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围.我是一个内联元素，会围绕在浮动元素的周围.我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围我是一个内联元素，会围绕在浮动元素的周围</span>
+    <hr>
+
+    <div class="float-wrapper clearfix">
+        <h3>div浮动，如果它的下一个元素是块级元素，则块级元素会当div不存在与文档流中。</h3>
+        <div class="float-wrap"></div>
+        <div class="next-div">1、我是一个块级元素，我会自动的占据上一个浮动元素的位置，就似乎是浮动的元素脱离了文档流<br>
+                              2、清除浮动，可以使得浮动元素的父级元素被浮动元素以及内部的其他元素撑开，不管是高还是宽
+            <h4>3、浮动元素是A，其父级元素是B，则A浮动后，需在B上清除浮动，使得父级元素被浮动元素撑开</h4>
+        </div>
+    </div>
+
 </body>
 </html>
