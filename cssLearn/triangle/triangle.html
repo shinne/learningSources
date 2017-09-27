@@ -52,6 +52,51 @@
             border-right: 50px solid transparent;
         }
 
+        .triangle-wrap{
+            position: relative;
+            height: 500px;
+            width: 500px;
+            border: 1px solid black;
+        }
+        .inner-triangle{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 10px;
+            margin: auto;
+            z-index: 2;
+            width:0;
+            height: 0;
+            border-left:50px solid transparent ;
+            border-right:50px solid transparent ;
+            border-bottom:50px solid green ;
+
+        }
+        .outer-triangle{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+            z-index: -1;
+            width:0;
+            height: 0;
+            border-left:60px solid transparent ;
+            border-right:60px solid transparent ;
+            border-bottom:60px solid black ;
+        }
+        .rectangle{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 55px;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            background: green;
+            border: 5px solid black;
+        }
+
 
     </style>
 </head>
@@ -74,5 +119,12 @@
 
     <h3>5倒三角；不设置border-bottom，并且left,right:transparent;top:50px;</h3>
     <div class="triangle5"></div>
+
+    <h3>6、通过三角给它加上一个外边框</h3>
+    <div class="triangle-wrap">
+        <div class="inner-triangle"></div>
+        <div class="outer-triangle"></div>
+        <div class="rectangle"></div>
+    </div>
 </body>
 </html>
