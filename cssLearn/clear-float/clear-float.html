@@ -28,8 +28,12 @@
         .clearfix:after{
             clear: both;
             content: '';
+            /*使生成的元素以块级元素显示,占满剩余空间*/
             display: block;
+            /*避免生成内容破坏原有布局的高度*/
             height: 0;
+            /*使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互*/
+            visibility: hidden;
         }
 
 
