@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h4>这里主要对数组进行foreach和delete操作</h4>
+<script>
+    var array = [1, 2, 3];
+    delete array[1];
+    console.log(array.length);
+    console.log(array)
+    array.forEach(function (value, index, array) {
+        console.log(index);
+        console.log(value);
+        console.log(array);
+    })
+
+    var array = [1, 2, 3];
+    //传统写法
+    array.forEach(function (v, i, a) {
+        console.log(v);
+    });
+    console.log("dddddddd")
+    //ES6
+    array.forEach(v = > console.log(v)
+    )
+    ;
+</script>
+</body>
+</html>
