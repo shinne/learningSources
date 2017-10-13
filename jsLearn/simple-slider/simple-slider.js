@@ -13,7 +13,7 @@
  * unClick 控制不可快速点击
  */
 
-function simpleSlider(config) {
+function SimpleSlider(config) {
     var defaultCfg = {
         sliderContainer: '.slider-container',
         sliderListContainer: '.slider-list-container',
@@ -36,8 +36,8 @@ function simpleSlider(config) {
     this.init();
 }
 
-simpleSlider.prototype = {
-    constructor: simpleSlider,
+SimpleSlider.prototype = {
+    constructor: SimpleSlider,
     /**
      * 计算slider-list的宽度，以及slider的个数
      */

@@ -5,6 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .growthLine{
+            position: relative;
+            height:280px; ;
+        }
+        #growthCvs,#growthContainer{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin:0 auto 50px auto;
+            border: 1px solid red;
+        }
+        #growthContainer{
+            height: 200px;
+            width: 1200px;
+        }
+        .circle{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            cursor: pointer;
+        }
+        .circle-wrapper{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: #bbb;
+            cursor: pointer;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -17,8 +50,25 @@
     <h4>绘制圆弧</h4>
     <canvas id="arcCvs"></canvas>
     <hr>
-    <h4>绘制渐变颜色</h4>
+    <h4>绘制渐变颜色及透明度</h4>
     <canvas id="gradationCvs"></canvas>
+    <h4>渐变半透明矩形</h4>
+    <canvas id="alphaCvs"></canvas>
+    <h4>线条设置</h4>
+    <canvas id="lineStyleCvs"></canvas>
+
+    <div class="growthLine" id="growthCanvas">
+        <h4>画一连串的曲线图</h4>
+        <canvas id="growthCvs"></canvas>
+        <div id="growthContainer"></div>
+    </div>
+
 </body>
+<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="./canvas.js"></script>
+<script>
+    var growthCanvas = document.getElementById("growthCvs");
+    var growthContainer = document.getElementById("growthContainer");
+    new GrowthCanvas(growthCanvas,{},{},growthContainer);
+</script>
 </html>
