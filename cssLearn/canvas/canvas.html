@@ -17,25 +17,72 @@
             margin:0 auto 50px auto;
             border: 1px solid red;
         }
+        #growthCvs{
+            background: rgba(246,241,230,0.3);
+        }
         #growthContainer{
             height: 200px;
             width: 1200px;
         }
         .circle{
             position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 5px;
-            background: #ddd;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            background: #fff;
             cursor: pointer;
         }
         .circle-wrapper{
             position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            background: #cfae68;
+            cursor: pointer;
+        }
+        .circle-current{
+            position: absolute;
             width: 20px;
             height: 20px;
             border-radius: 10px;
-            background: #bbb;
+            background: #fff;
             cursor: pointer;
+        }
+        .hover-panel{
+            display: none;
+            position: absolute;
+            left: -85px;
+            top: -25px;
+            height: 100px;
+            width: 200px;
+        }
+        .score-num{
+            height: 40px;
+            line-height:40px;
+            text-align: center;
+            color: #cfae68;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .score-wrap{
+            position: absolute;
+            height: 30px;
+            width: 30px;
+        }
+        .score-wrap:hover > .hover-panel{
+            display: block;
+        }
+        .score-calc{
+            margin-top: 6px;
+            width: 200px;
+            height: 60px;
+            background: url(./tip-bg.png);
+            background-size: cover;
+        }
+        .score-d{
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
     <title>Document</title>
@@ -58,7 +105,7 @@
     <canvas id="lineStyleCvs"></canvas>
 
     <div class="growthLine" id="growthCanvas">
-        <h4>画一连串的曲线图</h4>
+        <h4>画一连串的曲线图，模拟京东会员提升京享值页面</h4>
         <canvas id="growthCvs"></canvas>
         <div id="growthContainer"></div>
     </div>

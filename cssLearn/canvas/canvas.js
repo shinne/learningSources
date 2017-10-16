@@ -184,7 +184,7 @@ var GrowthCanvas = function (canvas, data, config,container) {
         marginLeft:60,
         marginRight:60,
         marginBottom:30,
-        lineWidth:4,
+        lineWidth:2,
         strokeStyle: "#cfae68",
         fillStyle: "#87da55",
         minScore: 0,
@@ -272,26 +272,52 @@ GrowthCanvas.prototype = {
     },
     drawPoint:function (point) {
         if(point.isCur){
-            circle = [
+            var circle = [
+                '<div class="score-wrap"  style="left:',
+                (point.x - 15) + 'px;',
+                'top:' + (point.y - 15) + 'px;">',
+                '<div class="hover-panel">',
+                '<div class="score-num">' + point.score,
+                '</div>',
+                '<div class="score-calc"><div class="score-d">您当前的分数是' + point.score,
+                '</div></div></div>',
+                '<div class="circle-current"',
+                'style="left:',
+                ((30-20)/2) + 'px;',
+                'top:' + ((30-20)/2) + 'px;">',
+                '</div>',
                 '<div class="circle-wrapper"',
                 'style="left:',
-                (point.x - 10) + 'px;',
-                'top:' + (point.y - 10) + 'px;">',
+                ((30-12)/2) + 'px;',
+                'top:' + ((30-12)/2) + 'px;">',
                 '</div>',
                 '<div class="circle"',
                 'style="left:',
-                (point.x - 5) + 'px;',
-                'top:' + (point.y - 5) + 'px;">',
-                '</div>',
+                ((30-4)/2) + 'px;',
+                'top:' + ((30-4)/2) + 'px;">',
+                '</div></div>'
             ];
         }
         else{
             var circle = [
+                '<div class="score-wrap"  style="left:',
+                (point.x - 15) + 'px;',
+                'top:' + (point.y - 15) + 'px;">',
+                '<div class="hover-panel">',
+                '<div class="score-num">' + point.score,
+                '</div>',
+                '<div class="score-calc"><div class="score-d">您当前的分数是' + point.score,
+                '</div></div></div>',
+                '<div class="circle-wrapper"',
+                'style="left:',
+                ((30-12)/2) + 'px;',
+                'top:' + ((30-12)/2) + 'px;">',
+                '</div>',
                 '<div class="circle"',
                 'style="left:',
-                (point.x - 5) + 'px;',
-                'top:' + (point.y - 5) + 'px;">',
-                '</div>'
+                ((30-4)/2) + 'px;',
+                'top:' + ((30-4)/2) + 'px;">',
+                '</div></div>'
             ];
         }
         var html = circle.join("");
