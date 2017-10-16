@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pos-wrap{
+            height: 400px;
+            width: 400px;
+            border: 1px solid red;
+            background: #f8f8f8 url(./bg.jpg) no-repeat scroll left 10px top 50px/200px 300px content-box  ;
+        }
+        .right-detail{
+            float: left;
+            margin-left: 600px;
+            border: 1px solid red;
+            padding: 10px;
+        }
+        h5{
+            margin: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="right-detail"><h4>这里是对position混合写法的学习，语法规则总结为 i r a p s o c</h4>
+    <h5>i:image，背景图片的地址>>>> url</h5>
+    <h5>r:repeat，图片是否重复铺填>>>> repeat-y,repeat-x,repeat,no-repeat</h5>
+    <h5>a:attachment，div滚动时，背景图片是否滚动>>>> scroll,fixed</h5>
+    <h5>p:position，图片从什么地方开始>>>> left top,left bottom...,left 10px bottom 20px,right bottom 10px</h5>
+    <h5>s:size，图片的大小设置>>>> cover,contain, 200px 300px</h5>
+    <h5>o:origin，图片从div的起始位置>>>> border-box,padding-box,content-box</h5>
+    <h5>c:color，图片的颜色设置，一般放在最后，这样不会覆盖掉背景图片</h5>
+</div>
+    <div class="pos-wrap"></div>
+
+</body>
+</html>
