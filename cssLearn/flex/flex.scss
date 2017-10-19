@@ -1,0 +1,196 @@
+//align-content是多根轴线的对齐方式
+//align-content是交叉轴轴的对齐方式
+
+
+.flex-container1{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  //TODO 默认的flex-direction:row,这里设置的原因是方便学习。即定义主轴为X轴，交叉轴为Y轴
+  //flex-direction: row;
+  //主轴上的对齐方式
+  justify-content: center;
+  //交叉轴上的对齐方式
+  align-items: center;
+  .flex-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+  }
+}
+
+.flex-container2{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  //TODO 默认的flex-direction:row,这里设置的原因是方便学习。即定义主轴为X轴，交叉轴为Y轴
+  //flex-direction: row;
+  //主轴上的对齐方式
+  justify-content: flex-end;
+  //交叉轴上的对齐方式
+  align-items: center;
+  .flex-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+  }
+}
+
+.flex-container3{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  //TODO 默认的flex-direction:row,这里设置的原因是方便学习。即定义主轴为X轴逆方向，交叉轴为Y轴
+  flex-direction: row-reverse;
+  //主轴上的对齐方式
+  justify-content: flex-start;
+  //交叉轴上的对齐方式
+  align-items: flex-end;
+  .flex-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+  }
+}
+
+.flex-container4{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  //主轴上的对齐方式
+  justify-content: space-between;
+  //交叉轴上的对齐方式
+  align-items: center;
+  .flex-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+  }
+}
+
+.flex-container5{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  //主轴上的对齐方式
+  justify-content: space-between;
+  //交叉轴上的对齐方式
+  align-items: center;
+  .flex-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+    &:nth-child(3){
+      align-self: flex-end;
+    }
+    &:nth-child(1){
+      align-self: flex-start;
+    }
+  }
+}
+
+.flex-container6{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  //主轴上的对齐方式
+  justify-content: flex-end;
+  //交叉轴上的对齐方式
+  align-content: space-between;
+  .flex-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+  }
+}
+
+.flex-container7{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  //交叉轴上的对齐方式
+  align-content: space-between;
+  .row{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 100%;
+    .flex-item{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: green;
+    }
+  }
+}
+
+.flex-container8{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  //交叉轴上的对齐方式
+  align-content: space-between;
+  .row{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 100%;
+    &:nth-child(2){
+        justify-content: center;
+    }
+    .flex-item{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: green;
+    }
+  }
+}
+
+
+.flex-container9{
+  margin-bottom: 20px;
+  height: 119px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content:space-between;
+  //交叉轴上的对齐方式
+  align-content: space-between;
+    .flex-item{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: green;
+
+  }
+}
