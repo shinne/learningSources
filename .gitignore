@@ -7,4 +7,3 @@ node_modules/*
 **/*.pdf
 **/*.css.map
 /**/*/node_modules/*
-**/*.css.map

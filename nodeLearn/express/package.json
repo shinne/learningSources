@@ -1,0 +1,21 @@
+{
+  "name": "express-demo",
+  "version": "1.0.0",
+  "description": "express,just learn now",
+  "main": "express1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "learn",
+    "post",
+    "get"
+  ],
+  "author": "shinneyou",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.2"
+  }
+}
