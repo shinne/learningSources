@@ -1,8 +1,10 @@
 */.idea
-*/node_modules
+node_modules/*
 **/*.zip
 **/*.rar
 **/*/.sass-cache
 .idea/*
 **/*.pdf
+**/*.css.map
+/**/*/node_modules/*
 **/*.css.map
