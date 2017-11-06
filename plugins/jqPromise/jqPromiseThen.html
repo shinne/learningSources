@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h4>deferred.then()有时为了省事，可以把done()和fail()合在一起写，这就是then()方法</h4>
+<h4>如果then()有两个参数，那么第一个参数是done()方法的回调函数，第二个参数是fail()方法的回调方法。</h4>
+<h4>promise的讲解</h4>
+<script>
+
+
+    var task1 = function () {
+        var dtd1 = $.Deferred();
+        var task = function () {
+            alert("task111111111111执行完毕");
+            /*dtd.reject("promise执行出错了");*/
+            /*dtd1.resolve("promise1111111111执行成功")*/
+            dtd1.reject("promise1111111111执行失败")
+        }
+        setTimeout(task,2000);
+        //TODO 不返回dtd则会马上执行.done，原因在于$.when()的返回参数只能是deferred对象，所以必须对wait()进行改写
+        return dtd1;
+    }
+
+    $.when(
+        task1()
+    )
+        .then(function (msg) {
+            console.log(msg);
+            alert(msg);
+        },function (msg) {
+            console.log(msg)
+            alert(msg);
+        })
+</script>
+</body>
+</html>
