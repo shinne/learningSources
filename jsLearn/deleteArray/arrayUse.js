@@ -43,7 +43,6 @@ var b = a.indexOf(2);  //b:1
 //splice(start,deleteCount,val1,val2,...),从start位置开始删除deleteCount项数据，并从该位置插入val1,val2,...，并返回删除的数据
 var a = [1,2,3,4,5];
 var b = a.splice(2,2,7); //a:[1,2,5,,7]   b:[3,4]
-
 var a = [1,2,3,4,5];
 a.splice(a.length-1,0,6,7);  //a:[1,2,3,4,6,7,5]
 var a = [1,2,3,4,5];
