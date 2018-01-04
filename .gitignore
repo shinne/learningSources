@@ -12,3 +12,7 @@ plugins/gaoliang/*
 plugins/zTree/*
 .idea/*
 plugins/*
+**/*.eot
+**/*.svg
+**/*.ttf
+**/*.woff

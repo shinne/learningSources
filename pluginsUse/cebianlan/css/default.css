@@ -1,4 +1,4 @@
-@import url(http://fonts.useso.com/css?family=Raleway:200,500,700,800);
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,500,700,800);
 @font-face {
 	font-family: 'icomoon';
 	src:url('../fonts/icomoon.eot?rretjt');
@@ -59,6 +59,7 @@ a:hover,a:focus{color:#74777b;}
 .htmleaf-content {
 	padding: 1em 0;
 }
+
 .bgcolor-1 { background: #f0efee; }
 .bgcolor-2 { background: #f9f9f9; }
 .bgcolor-3 { background: #e8e8e8; }/*light grey*/
@@ -148,7 +149,7 @@ a:hover,a:focus{color:#74777b;}
 .htmleaf-small{font-size: 0.8em;}
 .center{text-align: center;}
 /****/
-.related {
+.htmleaf-related {
 	color: #fff;
 	background: #333;
 	text-align: center;
@@ -157,7 +158,7 @@ a:hover,a:focus{color:#74777b;}
 	overflow: hidden;
 }
 
-.related > a {
+.htmleaf-related > a {
 	vertical-align: top;
 	width: calc(100% - 20px);
 	max-width: 340px;
@@ -167,7 +168,7 @@ a:hover,a:focus{color:#74777b;}
 	padding: 25px;
 	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
 }
-.related a {
+.htmleaf-related a {
 	display: inline-block;
 	text-align: left;
 	margin: 20px auto;
@@ -178,24 +179,24 @@ a:hover,a:focus{color:#74777b;}
 	-webkit-backface-visibility: hidden;
 }
 
-.related a:hover,
-.related a:active {
+.htmleaf-related a:hover,
+.htmleaf-related a:active {
 	opacity: 1;
 }
 
-.related a img {
+.htmleaf-related a img {
 	max-width: 100%;
 	opacity: 0.8;
 	border-radius: 4px;
 }
-.related a:hover img,
-.related a:active img {
+.htmleaf-related a:hover img,
+.htmleaf-related a:active img {
 	opacity: 1;
 }
-.related h3{font-family: "Microsoft YaHei", sans-serif;}
-.related a h3 {
+.htmleaf-related h3{font-family: "Microsoft YaHei", sans-serif;color: #fff;}
+.htmleaf-related a h3 {
 	font-weight: 300;
-	margin-top: 0.15em;
+	margin-top: 0.05em;
 	color: #fff;
 }
 /* icomoon */
