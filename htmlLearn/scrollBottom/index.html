@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../jquery/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 700px;border: 1px solid red;"></div>
+    <div style="height: 700px;border: 1px solid green;" id="target">sss</div>
+    <h3>//window.scrollTop + window.height > obj.offset.top则说明obj已经在电脑的视角之内</h3>
+    <script>
+        $(document).ready(function () {
+            console.log($("#target").text().length)
+            $(window).on("scroll",function () {
+               var top = $(this).scrollTop();
+               var objTop = $("#target").offset().top();
+
+            });
+        });
+    </script>
+</body>
+</html>
