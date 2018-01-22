@@ -1,55 +1,106 @@
 /**
  *
  * @param options:
- * tableWrap:包裹table的div
- * table:标识需要模拟的table
+ * tableWrapClass:包裹table的divClass标识
+ * tableClass:需要模拟的table标识
+ * tableWrap:标识table的div
+ * table:需要模拟的table
+ * virtualWrap:虚拟的包裹table的div，具有scroll
+ * virtualTable:虚拟的table，其宽度与table相同
  * @constructor
  */
 function ScrollFixed(options){
     this.initParam(options);
     this.createVirtualObj();
     this.bindEvents();
+    $("body").trigger("scroll");
 }
 
 ScrollFixed.prototype = {
     constructor:ScrollFixed,
     defaultCfg:{
-        tableWrap:".rpt-result-panel",
-        table:"table"
+        tableWrapClass:".rpt-result-panel",
+        tableClass:"table"
     },
     config:{},
     initParam:function (options) {
-        var config =  this.config = $.extend(this.defaultCfg,options || {});
-        this.tableWrap = $(config.tableWrap);
-        this.table = $(this.tableWrap).find(config.table);
+        var config =  this.config = $.extend(this.defaultCfg,this.config,options || {});
+        this.tableWrap = $(config.tableWrapClass);
+        this.table = $(this.tableWrap).find(config.tableClass);
     },
     createVirtualObj:function () {
         this.createVirtualWrap();
         this.createVirtualTable();
     },
     createVirtualWrap:function () {
-        var left = $(this.tableWrap).offset().left;
-        console.log(left);
-        var width = this.tableWrap.width();
-        this.virtualWrap = $("<div class='virtualWrap'></div>").css({
-            position:"fixed",
-            left:left,
-            bottom:0,
-            height:20,
-            width:width,
-            border:"1px solid red",
-            overflowX:"scroll"
-        }).appendTo($('body'));
+        var wrapWidth = this.tableWrap.width();
+        var tableWidth = this.table.width();
+        if(wrapWidth < tableWidth){
+            var left = $(this.tableWrap).offset().left;
+            if(this.virtualWrap){
+                this.virtualWrap.css({
+                    position:"fixed",
+                    left:left,
+                    bottom:0,
+                    height:80,
+                    width:wrapWidth,
+                    border:"1px solid red",
+                    overflowX:"scroll",
+                    visibility:"hidden"
+                });
+            }
+            else{
+                this.virtualWrap = $("<div class='virtualWrap'></div>").css({
+                    position:"fixed",
+                    left:left,
+                    bottom:0,
+                    height:80,
+                    width:wrapWidth,
+                    border:"1px solid red",
+                    overflowX:"scroll",
+                    visibility:"hidden"
+                }).appendTo($('body'));
+            }
+        }else{
+            if(this.virtualWrap){
+                this.virtualWrap.remove();
+            }
+        }
     },
     createVirtualTable:function () {
-        var width = this.table.width();
-        this.virtualTable = $("<div class='virtualTable'></div>").css({
-            position:"absolute",
-            left:0,
-            bottom:0,
-            height:10,
-            width:width,
-        }).appendTo(this.virtualWrap);
+        var wrapWidth = this.tableWrap.width();
+        var tableWidth = this.table.width();
+        if(wrapWidth < tableWidth){
+            //计算table与wrap的left相对位置
+            var wrapLeft = $(this.tableWrap).offset().left;
+            var tableLeft = $(this.table).offset().left;
+            var left = tableLeft - wrapLeft;
+            if(this.virtualTable){
+                this.virtualTable.css({
+                    position:"absolute",
+                    left:left,
+                    bottom:0,
+                    height:10,
+                    width:tableWidth
+                });
+            }
+            else{
+                this.virtualTable = $("<div class='virtualTable'></div>").css({
+                    position:"absolute",
+                    left:left,
+                    bottom:0,
+                    height:10,
+                    width:tableWidth
+                }).appendTo(this.virtualWrap);
+            }
+        }
+        else{
+            if(this.virtualTable){
+                this.virtualTable.remove()
+            }
+        }
+
+
     },
     bindEvents:function () {
         //虚拟wrap的scroll事件绑定
@@ -87,9 +138,19 @@ ScrollFixed.prototype = {
             }
             else{
                 $(self.virtualWrap).css("visibility","hidden");
-
             }
         });
+    },
+    refresh:function (options) {
+        this.config = $.extend(this.config,options);
+        this.initParam(this.config);
+        //重新改变virtualWrap和table的宽度
+        this.createVirtualObj();
+        this.bindVirtualWrapScroll();
+        this.bindWrapScroll();
+        //重新获取scrollLeft的宽度
+        $(this.tableWrap).trigger("scroll");
+        $('body').trigger("scroll");
     }
 
 };
