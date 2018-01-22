@@ -16,3 +16,4 @@ plugins/*
 **/*.svg
 **/*.ttf
 **/*.woff
+**/*/jquery.js
