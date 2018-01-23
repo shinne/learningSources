@@ -11,10 +11,11 @@
 </head>
 <body>
     <div class="search-panel">
-        <button class="triggerButton" style="position:absolute;margin:0 auto;left:0;right:0;height: 100px;width: 200px;">点击我异步加载新数据，并refresh组件</button>
+        <button class="triggerButton1" style="position:absolute;margin:0 auto;left:0;height: 100px;width: 200px;">点击我异步加载新数据1，没有滚动条的时候，并refresh组件</button>
+        <button class="triggerButton2" style="position:absolute;margin:0 auto;left:400px;height: 100px;width: 200px;">点击我异步加载新数据2，wrap和table都有左偏移时的效果，并refresh组件</button>
         <div class="search-content" style="padding-top: 120px;">
             <div class="rpt-result-panel test-wrap table  sticky-wrap" style="overflow-y:visible;overflow-x:scroll; min-height:200px;margin-top: 10px;" id="tableWrap">
-                <table class="table table-striped test-table table-bordered table-condensed grid table-sticky search-table sticky-enabled" style="width:100%;margin-left: 500px;">
+                <table class="table table-striped test-table table-bordered table-condensed grid table-sticky search-table sticky-enabled" style="width:100%;">
                     <thead style="background: #efefef;">
                     <tr>
                         <th style="min-width:295px">列11111111</th>
@@ -323,16 +324,29 @@
 <script>
     $(document).ready(function () {
         var scrollFixed = new ScrollFixed({
-            tableWrapClass:".test-wrap",
-            tableClass:".test-table"
+            scrollWrapClass:".test-wrap",
+            scrollItemClass:".test-table",
+            left:300
         });
-        $(".triggerButton").on("click",function(){
+        $(".triggerButton1").on("click",function(){
             $.ajax({
                 type: "get",
-                url: "fragment.html",
+                url: "fragment1.html",
                 success: function(data){
                     $(".search-content").html(data);
                     scrollFixed.refresh();
+                }
+            });
+        });
+        $(".triggerButton2").on("click",function(){
+            $.ajax({
+                type: "get",
+                url: "fragment2.html",
+                success: function(data){
+                    $(".search-content").html(data);
+                    scrollFixed.refresh({
+                        left:0
+                    });
                 }
             });
         });

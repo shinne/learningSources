@@ -1,42 +1,65 @@
 /**
+ * 1、思考show与visibility的区别
+ * 2、判断createVirtual是否需要创建，如果存在则更新其样式，否则创建
+ * 3、virtualScrollItem的left由其相对于scrollWrap的left确定
+ * 4、局限性，样式上的局限性，scrollWrap目前只能被scrollItem撑开
+ */
+
+/**
  *
  * @param options:
- * tableWrapClass:包裹table的divClass标识
- * tableClass:需要模拟的table标识
- * tableWrap:标识table的div
- * table:需要模拟的table
- * virtualWrap:虚拟的包裹table的div，具有scroll
- * virtualTable:虚拟的table，其宽度与table相同
+ * scrollWrapClass:包裹scrollItem的divClass标识
+ * scrollItemClass:需要模拟的scrollItem标识
+ * left:初始化滚动到left哪儿
  * @constructor
  */
+
 function ScrollFixed(options){
     this.initParam(options);
     this.createVirtualObj();
     this.bindEvents();
     $("body").trigger("scroll");
+    $(this.virtualWrap).scrollLeft(this.config.left);
+
 }
 
 ScrollFixed.prototype = {
     constructor:ScrollFixed,
     defaultCfg:{
-        tableWrapClass:".rpt-result-panel",
-        tableClass:"table"
+        scrollWrapClass:".scroll-wrap",
+        scrollItemClass:".scroll-item",
+        left:0
     },
     config:{},
     initParam:function (options) {
+        /**
+         * config
+         * scrollWrapClass:包裹scrollItem的divClass标识
+         * scrollItemClass:需要模拟的scrollItem标识
+         * left:初始化向左滚动多少
+         * scrollWrap:标识有滚动条的的obj
+         * scrollItem:需要模拟的obj
+         * virtualWrap:虚拟的包裹scrollItem的div，具有scroll
+         * virtualscrollItem:虚拟的scrollItem，其宽度与scrollItem相同
+         */
         var config =  this.config = $.extend(this.defaultCfg,this.config,options || {});
-        this.tableWrap = $(config.tableWrapClass);
-        this.table = $(this.tableWrap).find(config.tableClass);
+        this.scrollWrap = $(config.scrollWrapClass);
+        this.scrollItem = $(this.scrollWrap).find(config.scrollItemClass);
     },
     createVirtualObj:function () {
         this.createVirtualWrap();
-        this.createVirtualTable();
+        this.createVirtualItem();
     },
+    //创建一个虚拟的wrap，具有滚动条
     createVirtualWrap:function () {
-        var wrapWidth = this.tableWrap.width();
-        var tableWidth = this.table.width();
-        if(wrapWidth < tableWidth){
-            var left = $(this.tableWrap).offset().left;
+        var wrapWidth = this.scrollWrap.width();
+        var itemWidth = this.scrollItem.width();
+        var wrapLeft = $(this.scrollWrap).offset().left;
+        var itemLeft = $(this.scrollItem).offset().left;
+        var left = itemLeft - wrapLeft;
+        var realWidth = left + itemWidth;
+        if(wrapWidth < realWidth){
+            var left = $(this.scrollWrap).offset().left;
             if(this.virtualWrap){
                 this.virtualWrap.css({
                     position:"fixed",
@@ -54,7 +77,7 @@ ScrollFixed.prototype = {
                     position:"fixed",
                     left:left,
                     bottom:0,
-                    height:80,
+                    height:50,
                     width:wrapWidth,
                     border:"1px solid red",
                     overflowX:"scroll",
@@ -64,39 +87,43 @@ ScrollFixed.prototype = {
         }else{
             if(this.virtualWrap){
                 this.virtualWrap.remove();
+                this.virtualWrap = null;
             }
         }
     },
-    createVirtualTable:function () {
-        var wrapWidth = this.tableWrap.width();
-        var tableWidth = this.table.width();
-        if(wrapWidth < tableWidth){
-            //计算table与wrap的left相对位置
-            var wrapLeft = $(this.tableWrap).offset().left;
-            var tableLeft = $(this.table).offset().left;
-            var left = tableLeft - wrapLeft;
-            if(this.virtualTable){
-                this.virtualTable.css({
+    //创建一个与table同宽同left的div,模拟table
+    createVirtualItem:function () {
+        var wrapWidth = this.scrollWrap.width();
+        var itemWidth = this.scrollItem.width();
+        var wrapLeft = $(this.scrollWrap).offset().left;
+        var itemLeft = $(this.scrollItem).offset().left;
+        //计算table与wrap的left相对位置
+        var left = itemLeft - wrapLeft;
+        var realWidth = left + itemWidth;
+        if(wrapWidth < realWidth){
+            if(this.virtualScrollItem){
+                this.virtualScrollItem.css({
                     position:"absolute",
                     left:left,
                     bottom:0,
                     height:10,
-                    width:tableWidth
+                    width:itemWidth
                 });
             }
             else{
-                this.virtualTable = $("<div class='virtualTable'></div>").css({
+                this.virtualScrollItem = $("<div class='virtualTable'></div>").css({
                     position:"absolute",
                     left:left,
                     bottom:0,
                     height:10,
-                    width:tableWidth
+                    width:itemWidth
                 }).appendTo(this.virtualWrap);
             }
         }
         else{
-            if(this.virtualTable){
-                this.virtualTable.remove()
+            if(this.virtualScrollItem){
+                this.virtualScrollItem.remove();
+                this.virtualScrollItem = null;
             }
         }
 
@@ -114,12 +141,12 @@ ScrollFixed.prototype = {
         var self = this;
         $(this.virtualWrap).bind("scroll",function () {
             var left = $(this).scrollLeft();
-            $(self.tableWrap).scrollLeft(left);
+            $(self.scrollWrap).scrollLeft(left);
         });
     },
     bindWrapScroll:function () {
         var self = this;
-        $(this.tableWrap).bind("scroll",function () {
+        $(this.scrollWrap).bind("scroll",function () {
             var left = $(this).scrollLeft();
             $(self.virtualWrap).scrollLeft(left);
         });
@@ -129,8 +156,8 @@ ScrollFixed.prototype = {
         $(window).bind("scroll",function () {
             var top = $(window).scrollTop();
             var winHeight = $(window).height();
-            var wrapTop = $(self.tableWrap).offset().top;
-            var wrapHeight = $(self.tableWrap).height();
+            var wrapTop = $(self.scrollWrap).offset().top;
+            var wrapHeight = $(self.scrollWrap).height();
             var wrapBtmTop = wrapTop + wrapHeight;
             if(winHeight + top  < wrapBtmTop){
                 //visibility
@@ -149,8 +176,9 @@ ScrollFixed.prototype = {
         this.bindVirtualWrapScroll();
         this.bindWrapScroll();
         //重新获取scrollLeft的宽度
-        $(this.tableWrap).trigger("scroll");
+        $(this.scrollWrap).trigger("scroll");
         $('body').trigger("scroll");
+        $(this.virtualWrap).scrollLeft(this.config.left);
     }
 
 };
