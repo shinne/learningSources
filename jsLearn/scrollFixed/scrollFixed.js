@@ -16,11 +16,13 @@
 
 function ScrollFixed(options){
     this.initParam(options);
-    this.createVirtualObj();
-    this.bindEvents();
-    $("body").trigger("scroll");
-    $(this.virtualWrap).scrollLeft(this.config.left);
-
+    //当元素存在的时候才进行以下
+    if(this.scrollItem.length && this.scrollWrap.length){
+        this.createVirtualObj();
+        this.bindEvents();
+        $("body").trigger("scroll");
+        $(this.virtualWrap).scrollLeft(this.config.left);
+    }
 }
 
 ScrollFixed.prototype = {
@@ -179,6 +181,10 @@ ScrollFixed.prototype = {
         $(this.scrollWrap).trigger("scroll");
         $('body').trigger("scroll");
         $(this.virtualWrap).scrollLeft(this.config.left);
+    },
+    //页面的样式发生变化的时候调用它会重新判断页面的scroll状态
+    reload:function () {
+        $("body").trigger("scroll");
     }
 
 };
