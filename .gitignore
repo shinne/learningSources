@@ -11,6 +11,7 @@ nodeAPP/expressApp1/*
 plugins/gaoliang/*
 plugins/zTree/*
 .idea/*
+**/*/.idea
 plugins/*
 **/*.eot
 **/*.svg
