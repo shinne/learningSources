@@ -18,3 +18,5 @@ plugins/*
 **/*.ttf
 **/*.woff
 myGruntApp/dist/*
+**/*.svg
+**/*.log

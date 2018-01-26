@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h4><a href="">http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html</a></h4>
+<h4>promise的讲解</h4>
+<script>
+    /*var dtd = $.Deferred();*/
+
+    var task1 = function () {
+        var dtd1 = $.Deferred();
+        var task = function () {
+            alert("task111111111111执行完毕");
+            dtd1.resolve("promise1111111111执行成功")
+        }
+        setTimeout(task,2000);
+        //TODO 不返回dtd则会马上执行.done，原因在于$.when()的返回参数只能是deferred对象，所以必须对wait()进行改写：
+        return dtd1;
+    }
+
+    var task2 = function () {
+        var dtd2 = $.Deferred();
+        var task = function () {
+            alert("task22222222222执行完毕");
+           /* dtd2.resolve("promise222222222执行成功")*/
+           //TODO 当$.when中的任何一个执行失败reject，则会调用$.when .fail函数
+            dtd2.reject("promise222222222执行失败")
+        }
+        setTimeout(task,1000);
+        //TODO 不返回dtd则会马上执行.done，原因在于$.when()的返回参数只能是deferred对象，所以必须对wait()进行改写：
+        return dtd2;
+    }
+    $.when(
+        task1(),
+        task2()
+    )
+        .done(function (msg1,msg2) {
+            alert("当task1和task2都执行成功的时候就会触发$.when的done函数");
+            console.log(msg1);
+            console.log(msg2);
+            alert(msg1);
+            alert(msg2);
+            alert("task1和task2执行成功")
+        })
+        .fail(function (msg1,msg2) {
+            alert(msg1 || msg2);
+        })
+</script>
+</body>
+</html>

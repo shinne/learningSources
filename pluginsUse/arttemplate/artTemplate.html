@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src=./artTemplate.js></script>
+</head>
+<body>
+	<div id="test">
+
+	</div>
+
+	<script id="articleRender" type="text/html">
+	{{data}}
+</script>
+<script type="text/javascript">
+var data = {data:"you are beautiful"}
+var table = template('articleRender', data);
+var wrap = document.getElementById("test");
+wrap.innerHTML = table;
+
+</script>
+</body>
+</html>
