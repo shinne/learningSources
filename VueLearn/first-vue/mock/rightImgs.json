@@ -1,0 +1,24 @@
+{
+  "code":1,
+  "content":{
+    "rightsImgs":[
+      {
+        "src":"http://img3.imgtn.bdimg.com/it/u=1284994643,3602905021&fm=214&gp=0.jpg",
+        "id":1
+      },
+      {
+        "src":"http://img4.imgtn.bdimg.com/it/u=1855356434,1467476713&fm=214&gp=0.jpg",
+        "id":2
+      },
+      {
+        "src":"http://img0.imgtn.bdimg.com/it/u=3307882845,2099561697&fm=214&gp=0.jpg",
+        "id":3
+      },
+      {
+        "src":"http://img4.imgtn.bdimg.com/it/u=1826954099,825483662&fm=214&gp=0.jpg",
+        "id":4
+      }
+    ]
+  }
+
+}

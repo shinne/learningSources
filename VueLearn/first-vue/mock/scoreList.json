@@ -1,0 +1,33 @@
+{
+  "code":1,
+  "content":{
+    "scoreList":[
+      {
+        "name":"运费全免",
+        "checked":true,
+        "id":1
+      },
+      {
+        "name":"生日特权",
+        "checked":true,
+        "id":2
+      },
+      {
+        "name":"贵宾专线",
+        "checked":false,
+        "id":3
+      },
+      {
+        "name":"京享礼包",
+        "checked":true,
+        "id":5
+      },
+      {
+        "name":"PLUS权益",
+        "checked":true,
+        "id":6
+      }
+    ]
+  }
+
+}

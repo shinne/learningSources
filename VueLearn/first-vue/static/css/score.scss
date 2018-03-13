@@ -1,0 +1,37 @@
+.score-wrap{
+  padding: 20px 10px;
+  padding-bottom: 50px;
+  border: 1px solid #ccc;
+}
+
+.tips{
+  color:red;
+}
+
+.selected-wrap{
+  color:#333;
+  font-size: 18px;
+}
+
+button{
+  float: right;
+}
+
+.toast{
+  position: fixed;
+  left:0;
+  right:0;
+  margin: auto;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  top:0;
+  bottom:0;
+  background:red;
+  color:#fff;
+  border-radius: 6px;
+  text-align: center;
+}
+.success{
+  background: green;
+}
