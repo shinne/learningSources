@@ -20,3 +20,4 @@ plugins/*
 myGruntApp/dist/*
 **/*.svg
 **/*.log
+pluginsZIP/*
