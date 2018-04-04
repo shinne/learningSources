@@ -3,6 +3,7 @@ import * as types from './mutationsType'
 const mutations = {
   [types.GET_SCORES_LIST] (state, {...result}) {
     state.scoreList = result.scoreList
+    state.showMsg = false
   },
   [types.SAVE_SCORES_LIST] (state, {...result}) {
     state.showMsg = result.showMsg

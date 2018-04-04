@@ -37,7 +37,6 @@ export default {
   methods: {
   },
   created () {
-    this.$store.commit('selectNav', 'rightsList')
     this.$store.dispatch('getRightsImgs')
   }
 }

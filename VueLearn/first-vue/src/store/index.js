@@ -12,7 +12,7 @@ export default new Vuex.Store({
     scores
   },
   state: {
-    curPage: 'home'
+    userName: 'youtingting'
   },
   mutations: {
     selectNav (state, curPage) {

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="header">我是一个永远都存在的菜单header</div>
+    <div class="header">一直都在的头部,&nbsp;&nbsp;&nbsp;用户名{{userName}}</div>
     <ul class="header-nav">
       <li><router-link :to="{name:'Home'}" :class="{'active':curPage=='home' }">我是主页</router-link></li>
       <li><router-link :to="{name:'Score'}" :class="{'active':curPage=='score' }">我是分数页面</router-link></li>
@@ -17,12 +17,11 @@
 import { mapState } from 'vuex'
 export default {
   computed: mapState({
-    curPage: state => state.curPage
+    userName: state => state.userName
   }),
   methods: {
   },
   created () {
-    this.$store.commit('selectNav', 'home')
   }
 }
 </script>

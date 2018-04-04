@@ -17,7 +17,6 @@ export default {
   methods: {
   },
   created () {
-    this.$store.commit('selectNav', 'home')
   }
 }
 </script>
