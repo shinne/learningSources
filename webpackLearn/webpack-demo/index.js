@@ -1,2 +1,2 @@
-import './src/components/home/index.css'
+import './src/page/home/index.css'
 console.log("dddddddddd")

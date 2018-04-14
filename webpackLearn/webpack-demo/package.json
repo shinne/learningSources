@@ -4,8 +4,8 @@
   "description": "description about webpack configuration",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "server": "webpack-dev-server --open"
+    "build": "webpack --mode development",
+    "server": "webpack-dev-server --open --mode development"
   },
   "keywords": [
     "webpack",

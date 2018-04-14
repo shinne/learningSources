@@ -1,4 +1,4 @@
-var text = require("../mock/greeter.json");
+var text = require("../../../mock/index.json");
 module.exports = function () {
     var greet = document.createElement('div');
     greet.textContent = text.greetText;
