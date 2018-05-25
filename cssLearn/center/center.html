@@ -35,6 +35,43 @@
             width: 100px;
             border: 1px solid yellowgreen;
         }
+        .child2{
+            display: inline-block;
+            width: 50px;
+            height: 200px;
+            border: 1px solid red;
+            vertical-align: top;
+        }
+        .child3{
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            vertical-align: top;
+        }
+        .parent1{
+            height:600px;
+            line-height: 600px;
+            border: 1px solid green;
+        }
+        .child4{
+            vertical-align: middle;
+            border: 1px solid red;
+        }
+        .parent-cell{
+            height: 200px;
+            width: 500px;
+            display: table-cell;
+            vertical-align: middle;
+            border:1px solid yellow;
+        }
+        .child5{
+            width: 500px;
+            height: 50px;
+            border:1px solid green;
+        }
 
 
     </style>
@@ -46,6 +83,22 @@
 
     <div class="parent">
         <div class="child1">我是absolute，left,right,top,bottom:0,margin:auto;</div>
+    </div>
+
+    <div class="parent">
+        <div class="child2">行内块级元素可以通过text-align实现水平居中</div>
+        <div class="child2"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child3">我是absolute，left50%(父级宽度的一半),margin-left:son宽度的一半</div>
+    </div>
+
+    <div class="parent1">
+        <img class="child4" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=170435662,2089365540&fm=27&gp=0.jpg">父级设置height与line-height相同，img设置vertical-align:middle。line-height和vertical-align:middle的基友关系</img>
+    </div>
+    <div class="parent-cell">
+        <div class="child5" >父级设置display:table-cell;vertical-align:middle.但是父级设置百分比宽高不行</img>
     </div>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+    <style>
+        .parent{
+            padding: 0 200px 0 200px;
+        }
+        .left{
+            float: left;
+            position: relative;
+            width: 200px;
+            height: 500px;
+            background: yellow;
+            margin-left: -100%;
+            left:-200px
+        }
+        .center{
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: green;
+        }
+        .right{
+            float: left;
+            position: relative;
+            width: 200px;
+            height: 1000px;
+            background: yellow;
+            margin-left: -200px;
+            /*right: -200px;*/
+            left:200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>这是圣杯布局</p>
+        <ul>
+            <li>1、将center,left,right按顺序都进行float:left,并且position:relative(以便之后使用left属性)</li>
+            <li>2、将center设置宽度为100%</li>
+            <li>3、由于center100%之后，left被挤到了第二行。因此设置margin-left:-100%将其同center的left对齐并拉至center行</li>
+            <li>4、但是这样，left就覆盖了center的左边，因此，将parent设置 padding:0 200px 0 200px;使得center的宽度为除去左右的宽度</li>
+            <li>5、然后再设置left的left:-200px,将其拉到父级的最左边</li>
+            <li>6、right同理步骤3，设置margin-left:-200px将其拉入到跟center右对齐并跟center排列在同一行。</li>
+            <li>7、设置right的left:200px向右移动自身的宽度，这样就搞定了</li>
+        </ul>
+    </div>
+    <div class="parent">
+        <div class="center">center</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

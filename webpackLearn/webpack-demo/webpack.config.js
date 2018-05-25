@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
+console.log(webpack.NodeEnvironmentPlugin)
 const publicPath = "/static/360buyimg"
 
 module.exports = {
