@@ -1,0 +1,41 @@
+<html>
+	<head></head>
+	<body style="margin:0;">
+		<div id="parent" style="height: 3000px;">
+			<div id="child" style="margin-top: 500px;height: 300px;background: red;"></div>
+			<div id="fakeChild"style="margin-top: 500px;height: 300px;display: none;"></div>
+			<div id="green" style="height:500px;background:green;color:#fff;font-size: 18px;">
+				just a demo to apply 吸顶效果
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var child = document.getElementById("child");
+			var fakeChild = document.getElementById("fakeChild");
+
+			var offsetTop = child.offsetTop;
+			
+			window.onscroll = function(){
+				var scrollTop = document.body.scrollTop;
+				if(scrollTop > offsetTop){
+					fakeChild.style.display = "block";
+					child.style.position = "fixed";
+					child.style.width = "100%";
+					child.style.left = child.style.offsetLeft;
+					child.style.right = child.style.offsetLeft + child.style.offsetWidth;
+					child.style.top = 0;
+					child.style.marginTop = 0;
+				}
+				else{
+					fakeChild.style.display = "none";
+					child.style.position = "inherit";
+					child.style.width = "100%";
+					child.style.left = 0;
+					child.style.top = 0;
+					child.style.marginTop = 500;
+				}
+			}
+
+		</script>
+	</body>
+</html>
