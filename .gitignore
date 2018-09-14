@@ -21,3 +21,4 @@ myGruntApp/dist/*
 **/*.svg
 **/*.log
 pluginsZIP/*
+*/**/zTree/*

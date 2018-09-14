@@ -7,7 +7,7 @@ import todoApp from './component/reducers';
 import registerServiceWorker from './registerServiceWorker';
 let store = createStore(todoApp);
 
-ReactDom.render(
+ReactDOM.render(
     <Provider store={store}>
         <App/>
     </Provider>,

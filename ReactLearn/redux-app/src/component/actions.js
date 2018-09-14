@@ -20,7 +20,7 @@ export const VisibilityFilters = {
  action 创建函数
  */
 
-export function addTodo(textg) {
+export function addTodo(text) {
     return {
         type:ADD_TODO,
         text
