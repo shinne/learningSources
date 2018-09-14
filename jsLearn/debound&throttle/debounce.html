@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/html" src="./debounce.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div><label for="">未防抖联想</label><input type="text" id="unDebounce" /></div>
+<div><label for="">防抖联想</label><input type="text" id="debounce" /></div>
+<div><label for="">节流联想</label><input type="text" id="throttle" /></div>
+<script>
+    //未防抖联想
+    function ajax(content){
+        console.log("ajax request " + content);
+    }
+    var inputObj = document.getElementById("unDebounce");
+    inputObj.addEventListener("keyup",function(e){
+        ajax(e.target.value);
+    })
+    //未防抖联想
+
+    //防抖联想：在频繁操作时，只有在指定间隔内没有操作时，才会执行函数
+    //函数防抖常用于搜索输入框联想时，当用户在指定间隔没有输入时会发起联想请求
+    var debounceTimer = null;
+    function debounceAjax(content,delay) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function (e) {
+            console.log("debounce ajax request " + content)
+        },500);
+    }
+
+    var debounceObj = document.getElementById("debounce");
+    debounceObj.addEventListener("keyup",function(e){
+        debounceAjax(e.target.value,300)
+    })
+    //防抖联想：在频繁操作时，只有在指定间隔内没有操作时，才会执行函数
+
+    //函数节流：规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效
+    //函数节流常用于button在点击时，超快频率点击时的操作控制 || 或者下拉加载更多时的操作
+    var last,throttleTimer;
+    function throttleAjax(content,delay){
+        var now = +new Date();
+        //如果在一个时间间隔内
+        if(last &&  now < last + delay){
+            clearTimeout(throttleTimer);
+            throttleTimer = setTimeout(function () {
+                last = now;
+                console.log('throttle ajax request ' + content);
+            },delay);
+        }
+        //如果大于一个时间间隔
+        else{
+            last = now;
+            console.log("throttle ajax request " + content);
+        }
+    }
+    var throttleObj = document.getElementById("throttle");
+    throttleObj.addEventListener("keyup",function(e){
+        throttleAjax(e.target.value,1000)
+    })
+    //函数节流：规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效
+
+</script>
+
+
+</body>
+</html>
