@@ -16,8 +16,6 @@ plugins/*
 **/*.eot
 **/*.ttf
 **/*.woff
-myGruntApp/dist/*
-**/*.svg
 **/*.log
 pluginsZIP/*
 */**/zTree/*
