@@ -14,7 +14,6 @@ plugins/zTree/*
 **/*/.idea
 plugins/*
 **/*.eot
-**/*.svg
 **/*.ttf
 **/*.woff
 myGruntApp/dist/*

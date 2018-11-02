@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h4{
+            margin-top: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>learn from 【http://www.w3school.com.cn/svg/index.asp】</h3>
+<h4>This is an HTML paragraph</h4>
+<div style="height: 100px;width: 100px;border: 1px dashed #333;">
+    <svg height="100">
+        <circle cx="50" cy="50" r="40" stroke="black"
+                stroke-width="2" fill="red" opacity="0.5"/>
+    </svg>
+</div>
+
+
+
+<h4>rect矩形制作，链接外面的svg到html中</h4>
+<p>设置长宽(height,width)、颜色(fill)、透明度(fill-opacity,stroke-opacity,opacity)、圆角(rx,ry)等等</p>
+<div style="height: 140px;width: 340px;border:1px dashed #333;">
+    <embed src="rect1.svg" width="340" height="140"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+<h4>circle圆形制作</h4>
+<div style="height: 100px;width: 200px;border: 1px dashed #333;">
+    <embed src="circle1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+
+<h4>ellipse椭圆制作</h4>
+<div style="height: 180px;width: 500px;border: 1px dashed #333;">
+    <embed src="ellipse1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+<h4>line线条制作</h4>
+<div style="height: 100px;width: 100px;border: 1px dashed #333;">
+    <embed src="line1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+
+<h4>polygon多边形制作</h4>
+<div style="height: 240px;width: 300px;border: 1px dashed #333;">
+    <embed src="polygon1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+<h4>polyline折线制作</h4>
+<p>polyline首尾点会连起来(0,0  20,20  40,40 表示 坐标三个点并且 0,0  40,40 会连接起来)</p>
+<div style="height: 200px;width: 200px;border: 1px dashed #333;">
+    <embed src="polyline1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+<h4>path路线制作</h4>
+<div style="height: 500px;width: 500px;border: 1px dashed #333;">
+    <embed src="path1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+
+<h4>高斯模糊制作</h4>
+<p>filter标签的id属性可谓滤镜定义一个唯一的名称（可同时被多个元素使用）</p>
+<p>filter:url属性用来把元素链接到滤镜，当链接滤镜id时，必须使用#字符</p>
+<p>滤镜效果是通过 '< feGaussianBlur >' 标签进行定义的</p>
+<p><feGaussianBlur> 标签的 stdDeviation 属性可定义模糊的程度，in="SourceGraphic" 这个部分定义了由整个图像创建效果</p>
+<div style="height: 120px;width: 180px;border: 1px dashed #333;">
+    <embed src="gaosiFilter1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+
+<h4>线性渐变</h4>
+<p>'< linearGradient >'标签的x1、x2、y1、y2属性可定义渐变的开始和结束位置</p>
+<p>渐变的颜色范围可由两种或多种颜色组成，每种颜色通过'< stop >'标签来规定，offset属性用来定义渐变的开始和结束位置</p>
+<div style="height: 200px;width: 200px;border: 1px dashed #333;">
+    <embed src="gradient1.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+
+
+
+<h4>放射渐变</h4>
+<p>cx、cy 和 r 属性定义外圈，而 fx 和 fy 定义内圈 渐变的颜色范围可由两种或多种颜色组成</p>
+<div style="height: 200px;width: 250px;border: 1px dashed #333;">
+    <embed src="gradient2.svg" width="100%" height="100%"
+           type="image/svg+xml"
+           pluginspage="http://www.adobe.com/svg/viewer/install/" />
+</div>
+
+</body>
+</html>
