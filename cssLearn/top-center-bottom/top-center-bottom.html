@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        .container{
+            height:100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .top,.bottom{
+            height: 100px;
+            background: yellow;
+        }
+        .center{
+            flex:1;
+            /*overflow:auto;*/
+        }
+        .emphasize{
+            font-weight: bold;
+            font-size: 16px;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">headerheaderheader</div>
+        <div class="center">
+            <div class="real-center">
+                <ul>
+                    <li>1、外层容器设置display:flex，并且设定flex-direction:column;</li>
+                    <li>2、上下设定宽度</li>
+                    <li class="emphasize">3、中间自定义撑开的内容，设置flex:1意味盛满这个容器</li>
+                    <li class="emphasize">4、当center撑开，整个页面会出现滚动条，如果只想要center出现滚动条，则设置center的overflow:auto;</li>
+                    <li>5、(如果布局为左中右布局，则外层容器设定flex-direction:row即可实现)</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="bottom">bottombottombottom</div>
+    </div>
+</body>
+</html>
