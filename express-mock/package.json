@@ -1,0 +1,17 @@
+{
+  "name": "express-test",
+  "version": "1.0.0",
+  "description": "exprees-app-test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./mock.js"
+  },
+  "keywords": [
+    "express-app"
+  ],
+  "author": "shinne_you",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
