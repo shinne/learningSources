@@ -1,0 +1,12 @@
+#root,#text{
+  color: red;
+  .div{
+    color: green;
+  }
+}
+.img{
+  display: block;
+  height: 500px;
+  background-image: url('../app/images/timg.jpg');
+  background-repeat: no-repeat;
+}
