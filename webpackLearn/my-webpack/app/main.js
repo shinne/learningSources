@@ -1,16 +1,14 @@
-const greeter = require('./greeter')
 const greetText = require('./greetText.json')
-/*import es6test from './es6test.js'
-import style from './test.scss'*/
+const greeter = require('./greeter')
+const greetText1 = require('./greetText.json')
+const greetText2 = require('./greetText.json')
+const greetText3 = require('./greetText.json')
+const greetText4 = require('./greetText.json')
+const greetText5 = require('./greetText.json')
+const greetText6 = require('./greetText.json')
 
-document.querySelector('#root').appendChild(greeter())
 
-var text = document.querySelector('#text').appendChild(greeter())
-text.innerHTML = greetText.greetText
+console.log(greeter())
+console.log(greetText)
+console.log('shinne_you')
 
-/*const {test1,test2} = es6test
-console.log("es6的解构赋值")
-console.log(test1,test2)
-console.log('hihihihisdfdsfddffhihi')
-
-console.log('dddd')*/

@@ -13,7 +13,7 @@ module.exports = {
     devServer: {
         contentBase: './dist', //本地服务器所加载的页面所在的目录
         host:/*'www.ll.com'*/'localhost',
-        port:12345,
+        port:1234,
         historyApiFallback: true,
         inline: true //实时刷新
     },

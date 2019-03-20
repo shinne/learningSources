@@ -24,7 +24,7 @@ module.exports = {
     devtool: 'eval-srouce-map',
     module: {
         rules: [
-            {
+            /*{
                 test: /(\.jsx | \.js)$/,
                 use: {
                     loader: 'babel-loader',
@@ -35,7 +35,7 @@ module.exports = {
                     }
                 },
                 exclude: /node_modules/
-            },
+            },*/
             {
                 test:/\.scss$/,
                 use: extractTextPlugin.extract({
@@ -79,5 +79,13 @@ module.exports = {
         new UglifyWebpackPlugin(),
 
         new extractTextPlugin('css/index.css')
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            // ...
+        },
+        runtimeChunk: {
+            name: 'manifest'
+        }
+    }
 }

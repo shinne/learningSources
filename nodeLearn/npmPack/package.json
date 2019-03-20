@@ -1,0 +1,14 @@
+{
+  "name": "npm-shinne",
+  "version": "2.0.0",
+  "description": "just for a test",
+  "main": "index.js",
+  "bin":{
+     "shinne": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shinne_you",
+  "license": "ISC"
+}
