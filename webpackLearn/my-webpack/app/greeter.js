@@ -5,5 +5,6 @@ module.exports = function() {
     function ccccc(){
         console.log("ccccc")
     }
+    var test = "ddddd"
     return greet;
 };

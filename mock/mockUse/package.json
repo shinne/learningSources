@@ -1,0 +1,23 @@
+{
+  "name": "mockuse",
+  "version": "1.0.0",
+  "description": "mockjs used as a server",
+  "main": "index.js",
+  "scripts": {
+    "start server": "nodemon index.js"
+  },
+  "keywords": [
+    "mockjs",
+    "server",
+    "nodemon"
+  ],
+  "author": "shinne_you",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^2.1.5",
+    "commander": "^2.20.0",
+    "express": "^4.16.4",
+    "mockjs": "^1.0.1-beta3",
+    "shelljs": "^0.8.3"
+  }
+}

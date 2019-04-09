@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')  //html打包
 const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin')  //压缩js
 const CleanWebpackPlugin = require("clean-webpack-plugin");  //清除文件夹
@@ -12,8 +13,8 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist', //本地服务器所加载的页面所在的目录
-        host:/*'www.ll.com'*/'localhost',
-        port:1234,
+        host:/*'www.ll.com'*/'127.0.0.1',
+        port:3006,
         historyApiFallback: true,
         inline: true //实时刷新
     },
@@ -59,6 +60,14 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.js$/,
+                loader: 'eslint-loader',
+                include: [path.resolve(__dirname, 'app')], // 指定检查的目录
+                /*options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine
+                    formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
+                }*/
             }
         ]
     },
