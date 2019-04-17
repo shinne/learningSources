@@ -1,26 +1,28 @@
-const Service = require('egg').Service
+// app/service/news.js
+const Service = require('egg').Service;
 
-class NewService extends Service {
-    async list(page = 1) {
-        //read config
-        const { serverUrl, pageSize } = this.config.news
-        const {data: idList } = await this.ctx.curl(`${serverUrl}/topstories.json`,{
-            data:{
-                orderBy:'"${key}"',
-                startAt:'"${pageSize * (page - 1)}"',
-                endAt:'"${pageSize * page - 1}"',
-            },
-            dataType:'json'
-        })
+class NewsService extends Service {
+  async list(page = 1) {
+    // read config
+    const { serverUrl, pageSize } = this.config.news;
+    const { data: idList } = await this.ctx.curl(`${serverUrl}/topstories.json`, {
+      data: {
+        orderBy: '"$key"',
+        startAt: `"${pageSize * (page - 1)}"`,
+        endAt: `"${pageSize * page - 1}"`,
+      },
+      dataType: 'json',
+    });
 
-        const newList = await Promise.all(
-            Object.keys(idList).map(key => {
-                const url = `${serverUrl}/item/${idList[key]}.json`
-                return this.ctx.curl(url,{dataType:'json'})
-            })
-        )
-        return newList.map(res => res.data)
-    }
+    // parallel GET detail
+    const newList = await Promise.all(
+      Object.keys(idList).map(key => {
+        const url = `${serverUrl}/item/${idList[key]}.json`;
+        return this.ctx.curl(url, { dataType: 'json' });
+      })
+    );
+    return newList.map(res => res.data);
+  }
 }
 
-module.expots = NewService
+module.exports = NewsService;

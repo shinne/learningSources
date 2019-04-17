@@ -1,16 +1,13 @@
-const Controller = require('egg').Controller
+const Controller = require('egg').Controller;
 
-class NewController extends Controller {
-    async list(){
-        const dataList = {
-            list:[
-                {id:2,title:'the first one news',url:'/news1'},
-                {id:2,title:'the second one news',url:'/news1'}
-            ]
-        }
-        await this.ctx.render('news/list.tpl',dataList)
-    }
+class NewsController extends Controller {
+  async list() {
+    const ctx = this.ctx;
+    const page = ctx.query.page || 1;
+    const list = await ctx.service.news.list(page);
+    await this.ctx.render('news/list.tpl', { list });
+  }
 }
 
-module.exports = NewController
+module.exports = NewsController;
 
