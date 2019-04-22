@@ -42,6 +42,17 @@ module.exports = appInfo => {
       /Baiduspider/i,
     ],
   };
+  config.mysql = {
+    client:{
+      host:'localhost',
+      port:3306,
+      user:'root',
+      password:'666666',
+      database:'test'
+    },
+    app:true,
+    agent:false
+  }
 
   return {
     ...config,

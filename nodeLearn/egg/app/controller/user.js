@@ -31,6 +31,14 @@ class NewsController extends BaseController {
             delete:'success'
         }
     }
+
+    async list(){
+        const ctx = this.ctx
+        const users = await ctx.service.users.list()
+        ctx.body = {
+            users
+        }
+    }
 }
 
 module.exports = NewsController;
