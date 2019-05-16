@@ -1,0 +1,35 @@
+.transition{
+    width: 200px;
+    height: 200px;
+    transition:transform ease-in 1s;
+    background: green;
+}
+.transition:hover{
+    transform:Rotate(240deg) scale(0.4,0.4);
+}
+
+.animate{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    animation:colorful 5s ease-in-out infinite;
+}
+.animate:hover{
+    animation-state-play:paused
+}
+
+@keyframes colorful {
+    30%{
+        background: green;
+        border:5px solid blue;
+    }
+
+    70%{
+        border: 10px solid red;
+        background: purple;
+    }
+    100%{
+        border:15px dashed darkgoldenrod;
+        background:darkseagreen;
+    }
+}
