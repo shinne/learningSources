@@ -88,3 +88,15 @@ function findPeak(arr){
 console.log('峰值查找')
 console.log(findPeak([1,6,3,4,2]))
 
+var deepCopy = function deepopy(p, c) {
+    var c = c || {};
+    for (var i in p) {
+        if (typeof p[i] === 'object') {
+            c[i] = (p[i].constructor === Array) ? [] : {};
+            deepCopy(p[i], c[i]);
+        } else {
+            c[i] = p[i];
+        }
+    }
+    return c;
+}

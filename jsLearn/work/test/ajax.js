@@ -26,7 +26,7 @@ function formateData(data) {
  * {
  *   type:请求method
  *   data:传输数据
- *
+ *   url: 请求url
  * }
  */
 function ajax(params) {
