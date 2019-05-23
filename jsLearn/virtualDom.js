@@ -2,6 +2,19 @@ let state = { num: 5 };
 let timer;
 let preVDom;
 
+const nodePatchTypes = {
+    CREATE: 'create node',     //新增节点
+    REMOVE: 'remove node',     //删除节点
+    REPLACE: 'replace node',   //节点类型变化
+    UPDATE: 'update node'      //属性或者字节点变化
+}
+
+const propPatchTypes = {
+    REMOVE: 'remove prop',
+    UPDATE: 'update prop'
+}
+
+
 function render(element) {
     // 初始化的VD
     const vdom = view();
@@ -74,7 +87,7 @@ function diff(oldVDom, newVDom) {
         }
     }
 
-    // 更新 node
+    // 更新 node,程序读到这里说明节点的类型是一样的
     if (oldVDom.tag) {
         // 比较 props 的变化
         const propsDiff = diffProps(oldVDom, newVDom);
