@@ -101,7 +101,7 @@ var res = [1,2,3,4].find((a) => {
 console.log('--find--')
 
 
-console.log('--find--返回第一个满足条件的元素值')
+console.log('--findIndex--返回第一个满足条件的元素值')
 var res = [1,2,3,4].findIndex((a) => {
     return a > 0
 })
@@ -116,4 +116,5 @@ for(let {a,b} of [{a:0,b:1},{a:2,b:3}]){
 //0 1   2 3
 //将每个元素都作为let item接收
 
-
+// push,pop,shift,unshift,filter,sort,forEach,map,every,some,
+// concat,slice,splice,join,indexOf,find,findIndex,for(let xx of array)

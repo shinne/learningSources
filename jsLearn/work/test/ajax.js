@@ -66,6 +66,7 @@ function ajax(params) {
     }
     //第二种写法，当xhr.readyState===4时候，说明请求成功返回了，进行成功回调
     xhr.onreadystatechange = function () {
+        //0 创建xhr实例，1创建连接 2 发送 3接受部分头部信息 4信息接受完成，可以使用responseText
         if (xhr.readyState === 4) {
             // 进行onload里面的处理函数
         }

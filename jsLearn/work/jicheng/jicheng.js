@@ -8,14 +8,13 @@ function child(){
 child.prototype = new parent()  //1、原型中的引用对象是供所有的实例共享的 2、创建原型时无法向父级传递参数
 
 
-//构造函数继承
-//原型链继承
+//借用构造函数继承
 function parent(attr){
     this.attr = attr
     this.array = [0,1,2]
 }
 function child(){
-    parent.call(childAttr)   //1、子类无法访问父级的prototype
+    parent.call(childAttr)   //1、子类无法访问父级的prototype  2、无法实现复用
 }
 
 
@@ -49,8 +48,8 @@ inheritate(child,parent)      //完美实现，这个时候只需要调用一次
 
 //es6继承
 class cat extends animal(){
-    constructor(){
-        super()     //相当于 animal.prototype.constructor.call(this)
+    constructor(props){
+        super(props)     //相当于 animal.prototype.constructor.call(this)
         this.attr = attr
     }
 }
