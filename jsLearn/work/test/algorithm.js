@@ -1,20 +1,23 @@
 //二分查找
-function find(target,arr,start,end){
-    start = start || 0
-    end = end || arr.length - 1
-    var middle = start + (end-start)/2
-    for(var i = middle; i < middle; i++){
-        if(target == middle){
-            return middle
-        }
-        if(target > arr[middle]){
-            return find(target,arr,middle+1,end)
-        }
-        else{
-            return find(target,start,middle-1)
-        }
+function binarySearch(array,target,start,end){
+    start = start ? start : 0
+    end = end ? end : array.length - 1
+    if(start > end){
+        return -1
     }
+    let middle = parseInt(start + (end - start)/2)
+    if(target == array[middle]){
+        return middle
+    }else if(target > array[middle]){
+        return binarySearch(array,target,middle + 1,end)
+    }
+    else if(target < array[middle]){
+        return binarySearch(array,target,start,middle - 1)
+    }
+    return - 1
 }
+console.log('二分查找')
+console.log(binarySearch([1,2,3,4,5],2))
 
 //快速排序
 function quickSort(arr){
@@ -54,11 +57,11 @@ console.log('冒泡排序')
 console.log(bubbleSort([3,5,6,7,4,2,1]))
 
 //数组扁平化
-function flattern(arr,res){
-    res = res || []
+function flattern(arr){
+    let res = []
     arr.forEach(item =>{
         if(item instanceof Array){
-            res.concat(flattern(item,res))
+            res = res.concat(flattern(item,res))
         }
         else{
             res.push(item)
