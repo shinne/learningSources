@@ -61,7 +61,7 @@ function flattern(arr){
     let res = []
     arr.forEach(item =>{
         if(item instanceof Array){
-            res = res.concat(flattern(item,res))
+            res = res.concat(flattern(item))
         }
         else{
             res.push(item)
